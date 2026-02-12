@@ -1,0 +1,479 @@
+/* RoofingPros Main Stylesheet */
+
+:root {
+    /* Color Palette */
+    --primary-color: #d32f2f; /* Professional Construction Red */
+    --primary-dark: #b71c1c;
+    --secondary-color: #263238; /* Slate Blue/Grey */
+    --accent-color: #ff9800; /* Safety Orange */
+    --text-dark: #212121;
+    --text-light: #757575;
+    --white: #ffffff;
+    --bg-light: #f5f5f5;
+    --bg-dark: #1a1a1a;
+    
+    /* Spacing & Borders */
+    --container-width: 1200px;
+    --section-padding: 80px 20px;
+    --border-radius: 4px;
+    --transition: all 0.3s ease;
+    --shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Base resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--white);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1, h2, h3, h4 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: var(--section-padding);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+.section-header p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.bg-light { background-color: var(--bg-light); }
+.bg-dark { background-color: var(--bg-dark); color: var(--white); }
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    background-color: var(--white);
+    color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+}
+
+.btn-large {
+    padding: 16px 36px;
+    font-size: 1rem;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* Header & Navigation */
+.main-header {
+    background: var(--white);
+    box-shadow: var(--shadow);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links > li > a {
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+}
+
+.nav-links > li > a:hover {
+    color: var(--primary-color);
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    padding: 10px 0;
+    min-width: 200px;
+    display: none;
+    border-top: 3px solid var(--primary-color);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+
+.dropdown-menu li a:hover {
+    background: var(--bg-light);
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 0 0 30px 0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    margin: 20px 20px 10px;
+    font-size: 1.4rem;
+}
+
+.service-card p {
+    margin: 0 20px 20px;
+    color: var(--text-light);
+}
+
+.service-card .read-more {
+    margin: 0 20px;
+    display: inline-block;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
+
+.gallery-item img {
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Testimonials */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-item {
+    background: var(--bg-light);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.quote {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.customer-info strong {
+    display: block;
+    color: var(--secondary-color);
+}
+
+/* Quote Form Section */
+.quote-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.form-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-info-list {
+    margin-top: 30px;
+}
+
+.contact-info-list p {
+    margin-bottom: 10px;
+}
+
+.quote-form {
+    background: var(--white);
+    padding: 40px;
+    border-radius: var(--border-radius);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-family: inherit;
+}
+
+/* Footer */
+.main-footer {
+    padding: 60px 0 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-brand h3 {
+    color: var(--primary-color);
+}
+
+.footer-links h4, .footer-contact h4, .footer-social h4 {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    background: #333;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.footer-bottom {
+    background: #111;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    border-top: 1px solid #333;
+}
+
+/* Mobile Menu Button */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--secondary-color);
+}
+
+/* Responsive Overrides */
+@media (max-width: 992px) {
+    .quote-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Logic for toggle to be handled by JS */
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        padding: 0 40px;
+    }
+}
+
+/* Helper Class for JS Toggle */
+.nav-active {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
